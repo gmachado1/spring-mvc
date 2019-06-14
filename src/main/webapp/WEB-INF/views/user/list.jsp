@@ -23,7 +23,7 @@
     <div class="panel-default">
 
         <div class="panel-heading">
-            <span>${message == null ? '&nbsp;' : message}</span>
+            <span>${mensagem == null ? '&nbsp;' : mensagem}</span>
         </div>
 
         <table class="table table-striped table-condensed">
@@ -43,7 +43,8 @@
                     <td>
                     	<spring:url value="/usuario/update/${usuario.id }" var="update"/>                        
                         <a class="btn btn-info" href="${update }" >Editar</a>
-                        <a class="btn btn-danger" href=" #" >Excluir</a>
+                        <spring:url value="/usuario/remove/${usuario.id }" var="remove" />
+                        <a class="btn btn-danger" href="${remove }" >Excluir</a>
                     </td>
                 </tr>
             </c:forEach>

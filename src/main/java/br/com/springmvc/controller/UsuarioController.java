@@ -56,6 +56,12 @@ public class UsuarioController {
 		return new ModelAndView("redirect:/usuario/todos");
 
 	}
-	
+
+	@GetMapping("/remove/{id}")
+	public String remove(@PathVariable("id") Long id, RedirectAttributes attValue) {
+		dao.excluir(id);
+		attValue.addFlashAttribute("mensagem", "Usuário removido com sucesso.");
+		return "redirect:/usuario/todos";
+	}
 
 }

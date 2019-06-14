@@ -20,9 +20,10 @@
 		</div>
 		<hr>
 		<div>
-		<spring:url value="/usuario/save" var="save" />
+		<spring:url value="${usuario.id == null ? '/usuario/save' : '/usuario/update' }" var="save" />
 		 <form:form modelAttribute="usuario" action="${save }" method="post">
-				<div class="form-group">
+		 	<form:hidden path="id"/>
+			<div class="form-group">
 				<label for="nome">Nome: </label>
 				<form:input path="nome" class="form-control"/>
 			</div>

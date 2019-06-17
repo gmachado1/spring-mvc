@@ -36,6 +36,14 @@
 				<label for="dtNascimento">Data de Nascimento: </label>
 				<form:input path="dtNascimento"  class="form-control" type="date" />
 			</div>
+			</div>
+				<div class="form-group">
+				<label for="sexo">Sexo: </label>
+				<form:select path="sexo" value="sexo" class="form-control" type="tabLibSexo">
+					<form:options items="${sexos}" itemLabel="desc"  />
+					
+				</form:select>
+			</div>
 				<div class="form-group">
 				<button type="submit" class="btn btn-primary">Confirmar</button>
 			</div>

@@ -31,6 +31,7 @@
             <tr>
                 <th>ID</th>
                 <th>NOME</th>
+                 <th>Dt. Nascimento</th>
                 <th>AÇÃO</th>
             </tr>
             </thead>
@@ -39,6 +40,10 @@
                 <tr>
                     <td>${usuario.id }</td>
                     <td>${usuario.nome }&nbsp;${usuario.sobrenome }</td>
+                     <td>
+                     	<f:parseDate var="date" value="${usuario.dtNascimento }" pattern="yyyy-MM-dd" type="date"/>
+                     	<f:formatDate value="${date}" pattern="dd/MM/yyyy" type=""/>
+                     </td>
                     <td>
                     <td>
                     	<spring:url value="/usuario/update/${usuario.id }" var="update"/>                        

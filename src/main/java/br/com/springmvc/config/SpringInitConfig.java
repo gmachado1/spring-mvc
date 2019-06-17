@@ -1,6 +1,5 @@
 package br.com.springmvc.config;
 
-import org.springframework.web.SpringServletContainerInitializer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class SpringInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {

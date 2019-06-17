@@ -10,7 +10,6 @@ public class WelcomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcome() {
-		System.out.println("teste");
 	//	return "welcome";
 		return "redirect:/usuario/todos";
 	}

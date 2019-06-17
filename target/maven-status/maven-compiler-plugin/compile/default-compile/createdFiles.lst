@@ -1,8 +1,0 @@
-br/com/springmvc/controller/WelcomeController.class
-br/com/springmvc/config/RootConfig.class
-br/com/springmvc/dao/UsuarioDao.class
-br/com/springmvc/config/SpringInitConfig.class
-br/com/springmvc/domain/Usuario.class
-br/com/springmvc/controller/UsuarioController.class
-br/com/springmvc/dao/UsuarioDaoImpl.class
-br/com/springmvc/config/SpringMvcConfig.class

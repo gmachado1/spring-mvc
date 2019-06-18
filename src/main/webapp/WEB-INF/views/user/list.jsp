@@ -20,7 +20,39 @@
         <a class="btn btn-default" href="${cadastro }">Novo Usuário</a>
     </div>
     <hr>
-
+    <div>
+        <div>
+            <spring:url var="act_sexo" value="/usuario/sexo"/>
+            <form action="${act_sexo}" method="get">
+                <div class="form-group">
+                    <label for="tipoSexo">Busca por Sexo</label>
+                    <select name="tipoSexo" class="form-control">
+                        <c:forEach var="sexo" items="${sexos}">
+                            <option value="${sexo.desc}">${sexo.desc}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Localizar</button>
+                </div>
+            </form>
+        </div> 
+ 
+        <div>
+            <spring:url var="act_nome" value="/usuario/nome"/>
+            <form action="${act_nome}" method="get">
+                <div class="form-group">
+                    <label for="nome">Busca por Nome ou Sobrenome</label>
+                    <input name="nome" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Localizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <hr>
     <div class="${mensagem == null ? 'panel-default' : 'panel-success'}">
 
         <div class="panel-heading">

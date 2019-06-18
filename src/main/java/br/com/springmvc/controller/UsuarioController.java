@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -25,6 +26,29 @@ public class UsuarioController {
 
 	@Autowired
 	public UsuarioDao dao;
+	
+	@ModelAttribute("sexos")
+    public TipoSexo[] tipoSexo() {
+        return TipoSexo.values();
+    }
+	
+	@GetMapping("/nome")
+	public ModelAndView listarPorNome(@RequestParam(value = "nome") String nome) {
+ 
+        if (nome == null) {
+            return new ModelAndView("redirect:/usuario/todos");
+        }
+        return new ModelAndView("/user/list", "usuarios", dao.getByNome(nome));
+    }
+	
+	@GetMapping("/sexo")
+    public ModelAndView listarPorSexo(@RequestParam(value = "tipoSexo") TipoSexo sexo) {
+ 
+        if (sexo == null) {
+            return new ModelAndView("redirect:/usuario/todos");
+        }
+        return new ModelAndView("/user/list", "usuarios", dao.getBySexo(sexo));
+    }
 
 	@RequestMapping(value = "/todos", method = RequestMethod.GET)
 	public ModelAndView listar(ModelMap model) {

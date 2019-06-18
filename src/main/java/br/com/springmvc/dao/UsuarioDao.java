@@ -2,6 +2,7 @@ package br.com.springmvc.dao;
 
 import java.util.List;
 
+import br.com.springmvc.domain.TipoSexo;
 import br.com.springmvc.domain.Usuario;
 
 public interface UsuarioDao {
@@ -15,4 +16,8 @@ public interface UsuarioDao {
 	Usuario getById(Long id);
 
 	List<Usuario> getTodos();
+
+	List<Usuario> getBySexo(TipoSexo sexo);
+
+	List<Usuario> getByNome(String nome);
 }
